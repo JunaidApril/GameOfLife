@@ -4,6 +4,7 @@ using GameOfLife.Domain.Entities;
 using GameOfLife.Application.Interfaces;
 using GameOfLife.Application.Services;
 using Microsoft.Extensions.Logging;
+using GameOfLife.Domain.Errors;
 
 // Create the GameService and start the game
 RunApplication();
@@ -45,17 +46,24 @@ static void RunApplication()
 
     while (!isGameCreated)
     {
-        // Get user input for board size and number of generations
-        Console.Write("Enter number of rows: ");
-        int rows = int.Parse(Console.ReadLine());
+        try 
+        { 
+            // Get user input for board size and number of generations
+            Console.Write("Enter number of rows: ");
+            int rows = int.Parse(Console.ReadLine());
 
-        Console.Write("Enter number of columns: ");
-        int cols = int.Parse(Console.ReadLine());
+            Console.Write("Enter number of columns: ");
+            int cols = int.Parse(Console.ReadLine());
 
-        Console.Write("Enter number of generations: ");
-        generations = int.Parse(Console.ReadLine());
+            Console.Write("Enter number of generations: ");
+            generations = int.Parse(Console.ReadLine());
 
-        isGameCreated = game.CreateGame(rows, cols);
+            isGameCreated = game.CreateGame(rows, cols);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine(ErrorMessage.InvalidInputType);
+        }
     }
 
     game.RunGame(generations);

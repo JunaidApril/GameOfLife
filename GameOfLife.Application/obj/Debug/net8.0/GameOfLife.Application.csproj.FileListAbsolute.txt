@@ -1,0 +1,16 @@
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\bin\Debug\net8.0\GameOfLife.Application.deps.json
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\bin\Debug\net8.0\GameOfLife.Application.dll
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\bin\Debug\net8.0\GameOfLife.Application.pdb
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\bin\Debug\net8.0\GameOfLife.Domain.dll
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\bin\Debug\net8.0\GameOfLife.Domain.pdb
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\obj\Debug\net8.0\GameOfLife.Application.csproj.AssemblyReference.cache
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\obj\Debug\net8.0\GameOfLife.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\obj\Debug\net8.0\GameOfLife.Application.AssemblyInfoInputs.cache
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\obj\Debug\net8.0\GameOfLife.Application.AssemblyInfo.cs
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\obj\Debug\net8.0\GameOfLife.Application.csproj.CoreCompileInputs.cache
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\obj\Debug\net8.0\GameOfLife.Application.sourcelink.json
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\obj\Debug\net8.0\GameOfLi.0485D867.Up2Date
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\obj\Debug\net8.0\GameOfLife.Application.dll
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\obj\Debug\net8.0\refint\GameOfLife.Application.dll
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\obj\Debug\net8.0\GameOfLife.Application.pdb
+C:\Code\TechTest\GameOfLife\GameOfLife.Application\obj\Debug\net8.0\ref\GameOfLife.Application.dll

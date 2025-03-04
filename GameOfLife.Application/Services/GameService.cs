@@ -16,6 +16,12 @@ namespace GameOfLife.Application.Services
             _logger = logger;
         }
 
+        /// <summary>
+        /// Creates a new game instance with the specified number of rows and columns.
+        /// </summary>
+        /// <param name="rows">Number of rows for the game grid.</param>
+        /// <param name="cols">Number of columns for the game grid.</param>
+        /// <returns>True if the game is successfully created, otherwise false.</returns>
         public bool CreateGame(int rows, int cols)
         {
             try
@@ -40,8 +46,12 @@ namespace GameOfLife.Application.Services
                 _logger.LogError(ex, ErrorMessage.GeneralCreatingError);
                 return false;
             }
-            }
+        }
 
+        /// <summary>
+        /// Runs the game for the specified number of generations.
+        /// </summary>
+        /// <param name="generations">The number of generations to run the simulation.</param>
         public void RunGame(int generations)
         {
             try

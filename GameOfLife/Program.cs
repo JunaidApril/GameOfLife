@@ -5,6 +5,7 @@ using GameOfLife.Application.Interfaces;
 using GameOfLife.Application.Services;
 using Microsoft.Extensions.Logging;
 using GameOfLife.Domain.Errors;
+using GameOfLife.Domain.UserMessages;
 
 // Create the GameService and start the game
 RunApplication();
@@ -43,28 +44,48 @@ static void RunApplication()
     var game = serviceProvider.GetRequiredService<IGameService>();
     bool isGameCreated = false;
     int generations = 0;
+    int height = 0;
+    int width = 0;
 
-    while (!isGameCreated)
+    try 
     {
-        try 
-        { 
-            // Get user input for board size and number of generations
-            Console.Write("Enter number of rows: ");
-            int rows = int.Parse(Console.ReadLine());
+        // Get user input for board size and number of generations
 
-            Console.Write("Enter number of columns: ");
-            int cols = int.Parse(Console.ReadLine());
+        //get width
+        Console.WriteLine(string.Format(InputMessages.InitialUserRequest, "width"));
 
-            Console.Write("Enter number of generations: ");
-            generations = int.Parse(Console.ReadLine());
 
-            isGameCreated = game.CreateGame(rows, cols);
-        }
-        catch (FormatException)
+        while (!Int32.TryParse(Console.ReadLine(), out width) || width < 0)
         {
-            Console.WriteLine(ErrorMessage.InvalidInputType);
+            Console.WriteLine(string.Format(InputMessages.AfterIncorrectAttemptUserRequest, "width"));
         }
-    }
 
-    game.RunGame(generations);
+        //get height
+        Console.WriteLine(string.Format(InputMessages.InitialUserRequest, "height"));
+
+        while (!Int32.TryParse(Console.ReadLine(), out height) || height < 0)
+        {
+            Console.WriteLine(string.Format(InputMessages.AfterIncorrectAttemptUserRequest, "height"));
+        }
+
+        //get max num generations
+        Console.WriteLine(InputMessages.InitialGenerationRequest);
+
+        while (!Int32.TryParse(Console.ReadLine(), out generations) || generations < 0)
+        {
+            Console.WriteLine(InputMessages.AfterIncorrectGenerationAttempt);
+        }
+
+        isGameCreated = game.CreateGame(height, width);
+
+        if(!isGameCreated)
+            Console.WriteLine(ErrorMessage.GeneralCreatingError);
+
+        game.RunGame(generations);
+
+    }
+    catch (FormatException)
+    {
+        Console.WriteLine(ErrorMessage.InvalidInputType);
+    }
 }
